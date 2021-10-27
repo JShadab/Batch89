@@ -1,0 +1,78 @@
+You're invited to a Teams meeting!
+
+THBS Bootcamp Training by Alchemy Solutions - Batch 89
+
+https://teams.microsoft.com/l/meetup-join/19%3ameeting_YTliNmExYTYtMTYxMi00NmYwLWFlNDAtNjMxMmY2MjQ2MTc0%40thread.v2/0?context=%7b%22Tid%22%3a%2239d5b779-8b24-4e1d-b86d-94df66abc1e6%22%2c%22Oid%22%3a%2203f5c4bd-912f-425d-87c5-df1cb52a189a%22%7d
+
+Tap on the link or paste it in a browser to join.
+
+Batch 89
+
+-----------------------------------------------------------------------------------------------------
+Attendence
+https://docs.google.com/spreadsheets/d/1DIQfqfoXhk5HBV406wRy9ieZ8xof_B-Fn9UgZ9LlAgs/edit#gid=2107811133
+
+---------------------------------------------------
+2. CSS (Cascading Style sheet)
+---------------------------------
+
+	selector
+	{
+		declaration1;
+		declaration2;
+		-----
+		-----
+		-----	
+	}
+	
+Basic Selectors:
+-------------------
+1. tag name
+2. id 
+3. class
+
+---------------------------------------------
+In how many way, we can use CSS in our HTML page.
+
+1. Internal CSS:
+-------------------
+			
+	<head>
+			<style>
+			
+				// CSS code
+			
+			</style>
+	</head>
+
+
+
+2. External CSS:
+--------------------
+ <link rel="stylesheet" type="text/css" href="myStyle.css" />
+
+3. Inline CSS:
+----------------
+  <h1 style="color: yellow ; font-size:75px;" > Inline CSS demo </h1>
+  
+  --------------------------------------------------
+  Browser CSS -> External CSS -> Internal CSS -> Inline CSS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
