@@ -1,5 +1,6 @@
 const firstTextBox = document.getElementById('first');
 const secondTextBox = document.getElementById('second');
+var flag;
 
 function add() {
 
@@ -7,7 +8,7 @@ function add() {
     let b = Number(secondTextBox.value);
 
     var c = a + b;
-    alert("RESULT : " + c)
+    alert("RESULT of " + a + "+" + b + " = " + c)
 }
 function sub() {
 
@@ -15,7 +16,7 @@ function sub() {
     let b = Number(secondTextBox.value);
 
     var c = a - b;
-    alert("RESULT : " + c)
+    alert("RESULT of " + a + "-" + b + " = " + c)
 }
 function mul() {
 
@@ -23,14 +24,14 @@ function mul() {
     let b = Number(secondTextBox.value);
 
     var c = a * b;
-    alert("RESULT : " + c)
+    alert("RESULT of " + a + "*" + b + " = " + c)
 }
 function div() {
     let a = Number(firstTextBox.value);
     let b = Number(secondTextBox.value);
 
     var c = a / b;
-    alert("RESULT : " + c)
+    alert("RESULT of " + a + "/" + b + " = " + c)
 }
 function pow() {
 
@@ -38,28 +39,31 @@ function pow() {
     let b = Number(secondTextBox.value);
 
     var c = a ** b;
-    alert("RESULT : " + c)
+    alert("RESULT of " + a + "**" + b + " = " + c)
 }
 
-function fillFirstNumber() {
-
-    const firstTextBox = document.getElementById('first');
-
+function firstInputSelected() {
+    flag = 'first';
 }
 
-function fillSecondNumber() {
-    const secondTextBox = document.getElementById('second');
+function secondInputSelected() {
+    flag = 'second';
+}
+
+function clearAll() {
+    firstTextBox.value = '';
+    secondTextBox.value = '';
 }
 
 function onPressDigitButton(val) {
 
+    if (flag == 'first') {
+        firstTextBox.value = firstTextBox.value + val;
+    }
 
+    if (flag == 'second') {
+        secondTextBox.value = secondTextBox.value + val;
+    }
 
-    let firstInput = firstTextBox.value;
-    let secondInput = secondTextBox.value;
-
-    console.log(firstInput + ' : ' + secondInput);
-
-    alert(val);
 
 }

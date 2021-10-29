@@ -41,8 +41,8 @@
     <div id="calc" class="container">
 
         <div id="inputs" class="container">
-            First Number: <input type="number" name="first" id="first">
-            Second Number: <input type="number" name="second" id="second">
+            First Number: <input type="number" name="first" id="first" onclick="firstInputSelected()">
+            Second Number: <input type="number" name="second" id="second" onclick="secondInputSelected()">
         </div>
 
         <div class="container row" style="margin-top: 30px;">
@@ -86,6 +86,12 @@
                 <input type="button" value="Multiply" class="btn btn-primary" onclick="mul()"><br><br>
                 <input type="button" value="Division" class="btn btn-primary" onclick="div()"><br><br>
                 <input type="button" value="Power" class="btn btn-primary" onclick="pow()"><br><br>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <input type="button" value="Clear" class="btn btn-warning" onclick="clearAll()">
             </div>
         </div>
 
