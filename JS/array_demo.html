@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        const arr1 = [10, 20, 30, 40, 50];
+            //  arr1.push(99);// add element to the end of the array
+            //  arr1.unshift(11);// add element to the first position of the array
+
+            //  console.log(arr1);
+
+
+
+         const arr2 = [];
+
+        // for (let i = 0; i < arr1.length; i++) {
+        //     arr2[arr1.length - i -1] = arr1[i];
+        // }
+
+        for (let i = 0; i < arr1.length; i++) {
+             arr1.push(arr1[i]);
+         }
+
+         console.log("Original -> " + arr1);
+         console.log("Reversed -> " + arr2);
+
+        /*
+                const arr = [];
+        
+                for (let i = 0; i < 10; i++) {
+                    arr[i] = 2 * (i + 1);
+                }
+        
+                console.log(arr);
+        
+                const names = ['Supraja', 'Renuka', 'Sai'];
+        
+                for (let i = 0; i < names.length; i++) {
+                    console.log(names[i]);
+                }
+        
+        
+        
+                let z = [1001, 1002, 1003];
+        
+                let a = 77;
+        
+                z[99] = 1;
+        
+                console.log(z);
+                */
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

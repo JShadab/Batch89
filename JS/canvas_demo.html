@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D drawing</title>
+
+
+</head>
+
+<body>
+
+    <h1>Welcome to Canvas Drawing</h1>
+
+    <canvas id="myCanvas" width="400" height="300" style="border: 1px solid black;"></canvas>
+
+    <script>
+
+        const canvas = document.getElementById("myCanvas");
+        var context = canvas.getContext('2d');
+
+        /* context.moveTo(0, 0);
+        context.lineTo(400, 300);
+        context.stroke(); */
+
+        context.fillStyle = 'green';
+        /* context.fillRect(50, 50, 100, 100);
+        context.stroke(); */
+
+        context.strokeRect(50, 50, 50, 50);
+
+
+    </script>
+
+</body>
+
+</html>

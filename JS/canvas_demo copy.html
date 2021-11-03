@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D drawing</title>
+</head>
+
+<body>
+
+    <h1>Welcome to Canvas Drawing</h1>
+
+    <canvas id="myCanvas" width="400" height="400" style="border: 1px solid red;">
+
+    </canvas>
+
+    <script>
+
+        const canvas = document.getElementById("myCanvas");
+        var context = canvas.getContext('2d');
+
+        let x = 0;
+        let y = 0;
+
+        let h = 400;
+        let w = 400;
+
+        let delta = 100;
+
+        //Horizontal line
+
+        y = y + delta;
+        context.moveTo(x, y);
+        context.lineTo(w, y);
+
+        y = y + delta;
+        context.moveTo(x, y);
+        context.lineTo(w, y);
+
+        y = y + delta;
+        context.moveTo(x, y);
+        context.lineTo(w, y);
+        context.stroke();
+
+        //Vertical lines
+        let a = 0;
+        let b = 0;
+
+        a = a + delta;
+        context.moveTo(a, b);
+        context.lineTo(a, h);
+
+        a = a + delta;
+        context.moveTo(a, b);
+        context.lineTo(a, h);
+
+        a = a + delta;
+        context.moveTo(a, b);
+        context.lineTo(a, h);
+        
+        context.stroke();
+        
+    </script>
+
+</body>
+
+</html>
