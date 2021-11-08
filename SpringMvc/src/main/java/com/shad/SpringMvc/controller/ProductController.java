@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -24,11 +26,12 @@ public class ProductController {
 	}
 
 	@PostMapping("/addProduct")
-	@ResponseBody
 	public String addProduct(Product product) {
 
 		// save Product in DB
-		return productService.saveProduct(product);
+		productService.saveProduct(product);
+
+		return "redirect:/displayProducts";
 
 	}
 
@@ -41,6 +44,32 @@ public class ProductController {
 		modelAndView.addObject("allProduct", allProduct);
 
 		return modelAndView;
+	}
+
+	@GetMapping("/deleteProduct/{id}")
+	public String deleteProduct(@PathVariable int id) {
+		productService.deleteProduct(id);
+
+		return "redirect:/displayProducts";
+	}
+
+	@GetMapping("/editProduct/{id}")
+	public ModelAndView editProduct(@PathVariable int id) {
+
+		Product existingProduct = productService.getProduct(id);
+
+		ModelAndView modelAndView = new ModelAndView("EditProduct.html");
+		modelAndView.addObject("product", existingProduct);
+
+		return modelAndView;
+	}
+
+	@PostMapping("/editProduct")
+	public String doEditProduct(Product product) {
+
+		productService.editProduct(product);
+
+		return "redirect:/displayProducts";
 	}
 
 }

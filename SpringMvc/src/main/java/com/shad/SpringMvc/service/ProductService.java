@@ -3,7 +3,6 @@ package com.shad.SpringMvc.service;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -37,7 +36,7 @@ public class ProductService {
 		productsDB.put(2, product_2);
 	}
 
-	public String saveProduct(Product product) {
+	public void saveProduct(Product product) {
 
 		int id = productsDB.size() + 1;
 
@@ -45,7 +44,7 @@ public class ProductService {
 
 		productsDB.put(id, product);
 
-		return "Product added succesfully";
+	
 	}
 
 	public Product getProduct(int id) {
@@ -66,6 +65,20 @@ public class ProductService {
 
 		return allProducts;
 
+	}
+
+	public void deleteProduct(int id) {
+
+		productsDB.remove(id);
+
+	}
+
+	public void editProduct(Product product) {
+		
+		productsDB.put(product.getId(), product);
+
+		
+		
 	}
 
 }
