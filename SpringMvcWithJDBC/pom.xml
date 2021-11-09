@@ -10,12 +10,12 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.shad</groupId>
-	<artifactId>SpringMvc</artifactId>
+	<artifactId>SpringMvcJ</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>SpringMvcWithJDBC</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -40,12 +40,25 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jdbc</artifactId>			
+			<artifactId>spring-boot-starter-data-jdbc</artifactId>
 		</dependency>
-		
+
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client -->
+		<dependency>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>

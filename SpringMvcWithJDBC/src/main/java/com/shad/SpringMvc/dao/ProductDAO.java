@@ -19,7 +19,7 @@ public class ProductDAO {
 
 	public void addProduct(Product product) {
 
-		String insertSQL = "INSERT INTO " + TABLE_NAME + " (name, category, price, quantity) VLAUES(?,?,?,?)";
+		String insertSQL = "INSERT INTO " + TABLE_NAME + " (name, category, price, quantity) VALUES(?,?,?,?)";
 
 		jdbcTemplate.update(insertSQL, product.getName(), product.getCategory(), product.getPrice(),
 				product.getQuantity());
