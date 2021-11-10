@@ -2,9 +2,21 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Registration</title>
 </head>
 <body>
-Registration  page
+
+	<h1>Registration page</h1>
+
+	<form method="post" action="/customer">
+		Name: <input type="text" name="name"> <br>
+		 EMail: <input type="email" name="email"> <br> <br>
+		 Password: <input type="password" name="password"> <br> <br>
+		 Phone: <input type="text" name="phone"> <br> 
+		 <input type="submit" value="Register"> <input type="reset" value="Reset">
+	</form>
+
+
+	<a href="/login"> Sign In</a>
 </body>
 </html>

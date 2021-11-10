@@ -18,18 +18,29 @@ public class CustomerController {
 	private CustomerService customerService;
 
 	@PostMapping("/customer")
-	public Customer saveCustomer(Customer customer) {
-		return customerService.saveCustomer(customer);
+	public String saveCustomer(Customer customer) {
+		 customerService.saveCustomer(customer);
+		 
+		 return "redirect:/login";
 	}
+
 	@PostMapping("/login")
-	public Optional<Customer> getCustomer(Login login) {
-		return customerService.getCustomer(login.getEmail(), login.getPassword());
+	public String getCustomer(Login login) {
+
+		Optional<Customer> optional = customerService.getCustomer(login.getEmail(), login.getPassword());
+
+		if (optional.isPresent()) {
+			return "dashboard";
+		} else {
+			return "redirect:/login";
+		}
 	}
-	
+
 	@GetMapping("/login")
 	public String getLoginPage() {
 		return "login";
 	}
+
 	@GetMapping("/register")
 	public String getRegisterPage() {
 		return "register";
