@@ -22,11 +22,6 @@ public class ProductRESTController {
 	@Autowired
 	private ProductService productService;
 
-	@GetMapping("/test")
-	public String getAddProductPage() {
-		return "Hello From REST controller";
-	}
-
 	@PostMapping("/product")
 	public Product addProduct(@RequestBody Product product) {
 		return productService.saveProduct(product);
