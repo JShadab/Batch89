@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<title>HOME</title>
+<title>Print Ticket</title>
 
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -10,59 +10,58 @@
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
 
+<style type="text/css">
+h6 {
+	color: red;
+}
+</style>
+
 </head>
 
 <body>
 
-	<h1 align="center">Ticket Booking Form</h1>
-
 	<div class="container">
+		<h1 align="center">Ticket Booking Details</h1>
 
-		<div class="row">
-			<div class="col-6">
-				Train Number: <input type="text" th:field="${train.trainNo}"
-					readonly="readonly">
-			</div>
-			<div class="col-6">
-				Train Name: <input type="text" th:field="${train.trainName}"
-					readonly="readonly">
-			</div>
-		</div>
-		<br>
-		<div class="row">
-			<div class="col-4">
-				Source: <input type="text" th:field="${train.source}"
-					readonly="readonly">
-			</div>
-			<div class="col-4">
-				<input type="text" th:field="${train.destination}"
-					readonly="readonly">
-			</div>
-			<div class="col-4">
-				<input type="text" th:field="${train.ticketPrice}"
-					readonly="readonly">
-			</div>
-		</div>
-	</div>
+		PNR:
+		<h6 th:text="${ticket.pnr}"></h6>
+		Train Number:
+		<h6 th:text="${ticket.train.trainNo}"></h6>
+		Train Name:
+		<h6 th:text="${ticket.train.trainName}"></h6>
+		From:
+		<h6 th:text="${ticket.train.source}"></h6>
+		To:
+		<h6 th:text="${ticket.train.destination}"></h6>
+		Travel Date:
+		<h6 th:text="${ticket.travelDate}"></h6>
 
-	<br>
-	<br>
-	<br>
-	<hr>
-	<div class="container">
+		<hr>
 
-		<h1>Enter Passenger Details</h1>
+		Passenger Details: <br>
 
-		<form th:action="@{/bookTrain/} + ${train.trainNo}" method="post">
+		<table class="table">
 
-			Name: <input type="text" name="name"> <br> Gender: <input
-				type="radio" name="gender" value="M"> Male <input
-				type="radio" name="gender" value="F"> Female <br> Age:
-			<input type="number" name="age"> <br> Travel Date: <input
-				type="date" name="travelDate"> <br> <input
-				type="submit" value="Confirm">
+			<tr>
+				<th>Number</th>
+				<th>Age</th>
+				<th>Gender</th>
+				<th>Fare</th>
 
-		</form>
+			</tr>
+
+			<tr th:each="entry : ${ticket.passangers}">
+				<td th:text="${entry.key.name}"></td>
+				<td th:text="${entry.key.age}"></td>
+				<td th:text="${entry.key.gender}"></td>
+				<td th:text="${entry.value}"></td>
+
+			</tr>
+
+		</table>
+		<hr>
+
+		Total Fare: <h2 th:text="${ticket.totalFare}"></h2>  <input type="button" value="Print" class="btn btn-primary" onclick="window.print()">
 
 	</div>
 

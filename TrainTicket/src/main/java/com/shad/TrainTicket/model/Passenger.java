@@ -1,6 +1,6 @@
 package com.shad.TrainTicket.model;
 
-public class Passenger {
+public class Passenger implements Comparable<Passenger> {
 
 	private String name;
 	private int age;
@@ -35,6 +35,12 @@ public class Passenger {
 
 	public void setGender(char gender) {
 		this.gender = gender;
+	}
+
+	@Override
+	public int compareTo(Passenger passenger) {
+
+		return this.getAge() - passenger.getAge();
 	}
 
 }

@@ -4,7 +4,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -58,9 +62,19 @@ public class HomeController {
 		if (trainOptional.isPresent()) {
 			Train train = trainOptional.get();
 
-			Ticket ticket = new Ticket(new Date(travelDate), train);
-			
+			DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyy-MM-dd");
+
+			DateTime dateTime = DateTime.parse(travelDate, formatter);
+
+			int date = dateTime.getDayOfMonth();
+			int month = dateTime.getMonthOfYear();
+			int year = dateTime.getYear();
+
+			Ticket ticket = new Ticket(new Date(year, month, date), train);
+
 			ticket.addPassenger(passenger.getName(), passenger.getAge(), passenger.getGender());
+			
+			ticket.getTotalFare();
 
 			modelAndView.addObject("ticket", ticket);
 
