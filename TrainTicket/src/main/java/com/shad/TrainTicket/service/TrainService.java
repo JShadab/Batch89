@@ -41,4 +41,10 @@ public class TrainService {
 		return trainRepository.findById(trainNumber);
 	}
 
+	public List<Train> getAllTrains() {
+		return trainRepository.findAll();
+	}
+
+	
+
 }
